@@ -1,4 +1,4 @@
-CGI::Application::Plugin::TT::LastModified sets "Last-Modified" header from TT templates
+CGI::Application::Plugin::TT::LastModified adds "Last-Modified" header based on modification time of TT template component
 
 Copyright (C) 2007, Graham TerMarsch.  All Rights Reserved.
 
@@ -10,3 +10,9 @@ To install:
     ./Build
     ./Build test
     ./Build install
+
+or
+    perl Makefile.PL
+    make
+    make test
+    make install

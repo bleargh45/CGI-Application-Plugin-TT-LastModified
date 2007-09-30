@@ -178,6 +178,7 @@ terms as Perl itself.
 =head1 SEE ALSO
 
 L<CGI::Application::Plugin::TT>,
-L<CGI::Application>.
+L<CGI::Application>,
+L<Template>.
 
 =cut

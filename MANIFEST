@@ -18,4 +18,3 @@ t/lib/TestApp/Plain.pm
 t/templates/top.html
 t/templates/bottom.html
 t/templates/index.html
-META.yml

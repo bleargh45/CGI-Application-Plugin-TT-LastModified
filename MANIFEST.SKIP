@@ -3,3 +3,5 @@ _build/
 .svn/
 \..*\.swp
 blib/
+Makefile
+pm_to_blib

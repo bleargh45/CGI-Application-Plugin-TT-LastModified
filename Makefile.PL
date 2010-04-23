@@ -2,15 +2,15 @@
 use ExtUtils::MakeMaker;
 WriteMakefile
 (
-          'INSTALLDIRS' => 'site',
           'NAME' => 'CGI::Application::Plugin::TT::LastModified',
-          'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/CGI/Application/Plugin/TT/LastModified.pm',
           'PREREQ_PM' => {
-                           'List::Util' => 0,
                            'CGI::Application' => 4,
+                           'CGI::Application::Plugin::TT' => 0,
                            'CGI::Util' => 0,
-                           'CGI::Application::Plugin::TT' => 0
-                         }
+                           'List::Util' => 0
+                         },
+          'INSTALLDIRS' => 'site',
+          'EXE_FILES' => []
         )
 ;

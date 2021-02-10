@@ -1,3 +1,4 @@
+requires 'perl', '>= 5.008';
 requires 'CGI::Application';
 requires 'CGI::Application::Plugin::TT';
 requires 'CGI::Util';

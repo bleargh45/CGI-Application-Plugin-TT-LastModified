@@ -7,6 +7,7 @@ use strict;
 use warnings;
 use CGI::Util qw(expires);
 use List::Util qw(max);
+use namespace::clean;
 
 ###############################################################################
 # Version numbering.

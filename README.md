@@ -85,6 +85,6 @@ terms as Perl itself.
 
 # SEE ALSO
 
-[CGI::Application::Plugin::TT](https://metacpan.org/pod/CGI%3A%3AApplication%3A%3APlugin%3A%3ATT),
-[CGI::Application](https://metacpan.org/pod/CGI%3A%3AApplication),
-[Template](https://metacpan.org/pod/Template).
+- [CGI::Application::Plugin::TT](https://metacpan.org/pod/CGI%3A%3AApplication%3A%3APlugin%3A%3ATT)
+- [CGI::Application](https://metacpan.org/pod/CGI%3A%3AApplication)
+- [Template](https://metacpan.org/pod/Template)

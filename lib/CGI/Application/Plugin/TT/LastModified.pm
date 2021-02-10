@@ -140,7 +140,7 @@ B<If> you have a desire to have the "Last-Modified" header set automatically
 for you, though, C<CGI::Application::Plugin::TT::LastModified> does have an
 C<:auto> import tag which auto-registers L</tt_set_last_modified_header()> as a
 "tt_post_process" hook for you.  If you've got an app that just processes
-static TT pages and generates output, this'll be useful for you.
+static TT pages and generates output, this will be useful for you.
 
 =head1 METHODS
 

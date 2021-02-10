@@ -51,7 +51,7 @@ make that easier.
 for you, though, `CGI::Application::Plugin::TT::LastModified` does have an
 `:auto` import tag which auto-registers ["tt\_set\_last\_modified\_header()"](#tt_set_last_modified_header) as a
 "tt\_post\_process" hook for you.  If you've got an app that just processes
-static TT pages and generates output, this'll be useful for you.
+static TT pages and generates output, this will be useful for you.
 
 # METHODS
 

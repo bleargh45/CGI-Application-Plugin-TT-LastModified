@@ -29,8 +29,6 @@ our @EXPORT = qw(
 # auto-added in as a TT post process hook.
 ###############################################################################
 sub import {
-    my $pkg = shift;
-    my $auto = shift;
     my $caller = scalar caller;
 
     # manually export our symbols
@@ -46,7 +44,7 @@ sub import {
     elsif (not UNIVERSAL::can($caller, 'tt_obj')) {
         warn "Calling package hasn't imported CGI::Application::Plugin::TT.\n";
     }
-    elsif ($auto and ($auto eq ':auto')) {
+    elsif ($_[1] and ($_[1] eq ':auto')) {
         $caller->add_callback( tt_post_process => \&tt_set_last_modified_header );
     }
 }

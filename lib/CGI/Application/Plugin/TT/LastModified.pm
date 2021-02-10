@@ -148,19 +148,19 @@ static TT pages and generates output, this'll be useful for you.
 =item import()
 
 Custom import routine, which allows for C<tt_set_last_modified_header()> to
-be auto-added in as a TT post process hook. 
+be auto-added in as a TT post process hook.
 
 =item tt_last_modified()
 
 Returns the most recent modification time for any component of the most
 recently processed template (via C<tt_process()>). Time is returned back to
-the caller as "the number of seconds since the epoch". 
+the caller as "the number of seconds since the epoch".
 
 =item tt_set_last_modified_header()
 
 Sets a "Last-Modified" header in the HTTP response, equivalent to the last
 modification time of the template components as returned by
-C<tt_last_modified()>. 
+C<tt_last_modified()>.
 
 =back
 

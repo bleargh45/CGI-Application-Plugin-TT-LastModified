@@ -1,0 +1,90 @@
+# NAME
+
+CGI::Application::Plugin::TT::LastModified - Set "Last-Modified" header based on TT template
+
+# SYNOPSIS
+
+```perl
+# when you want to set the "Last-Modified" header manually
+  use base qw(CGI::Application);
+  use CGI::Application::Plugin::TT;
+  use CGI::Application::Plugin::TT::LastModified;
+
+  sub my_runmode {
+      my $self = shift;
+      my %params = (
+          ...
+          );
+      my $html = $self->tt_process( 'template.html', \%params );
+      $self->tt_set_last_modified_header();
+      return $html;
+  }
+
+# when you want the "Last-Modified" header set automatically
+  use base qw(CGI::Application);
+  use CGI::Application::Plugin::TT;
+  use CGI::Application::Plugin::TT::LastModified qw(:auto);
+
+  sub my_runmode {
+      my $self = shift;
+      my %params = (
+          ...
+          );
+      return $self->tt_process( 'template.html', \%params );
+  }
+```
+
+# DESCRIPTION
+
+`CGI::Application::Plugin::TT::LastModified` adds support to
+`CGI::Application` for setting a "Last-Modified" header based on the most
+recent modification time of _any_ of the components of a template that was
+processed with TT.
+
+Normally you'll want to call it manually, on as "as needed" basis; if you're
+processing templates with TT you're most likely dealing with dynamic content
+(in which case you probably don't even want a "Last-Modified" header).  The odd
+time you'll want to set a "Last-Modified" header, though, this plugin helps
+make that easier.
+
+**If** you have a desire to have the "Last-Modified" header set automatically
+for you, though, `CGI::Application::Plugin::TT::LastModified` does have an
+`:auto` import tag which auto-registers ["tt\_set\_last\_modified\_header()"](#tt_set_last_modified_header) as a
+"tt\_post\_process" hook for you.  If you've got an app that just processes
+static TT pages and generates output, this'll be useful for you.
+
+# METHODS
+
+- import()
+
+    Custom import routine, which allows for `tt_set_last_modified_header()` to
+    be auto-added in as a TT post process hook.
+
+- tt\_last\_modified()
+
+    Returns the most recent modification time for any component of the most
+    recently processed template (via `tt_process()`). Time is returned back to
+    the caller as "the number of seconds since the epoch".
+
+- tt\_set\_last\_modified\_header()
+
+    Sets a "Last-Modified" header in the HTTP response, equivalent to the last
+    modification time of the template components as returned by
+    `tt_last_modified()`.
+
+# AUTHOR
+
+Graham TerMarsch (cpan@howlingfrog.com)
+
+# COPYRIGHT
+
+Copyright (C) 2007, Graham TerMarsch.  All Rights Reserved.
+
+This is free software; you can redistribute it and/or modify it under the same
+terms as Perl itself.
+
+# SEE ALSO
+
+[CGI::Application::Plugin::TT](https://metacpan.org/pod/CGI%3A%3AApplication%3A%3APlugin%3A%3ATT),
+[CGI::Application](https://metacpan.org/pod/CGI%3A%3AApplication),
+[Template](https://metacpan.org/pod/Template).

@@ -13,7 +13,7 @@ CGI::Application::Plugin::TT::LastModified - Set "Last-Modified" header based on
   sub my_runmode {
       my $self = shift;
       my %params = (
-          ...
+          # ...
           );
       my $html = $self->tt_process( 'template.html', \%params );
       $self->tt_set_last_modified_header();
@@ -28,7 +28,7 @@ CGI::Application::Plugin::TT::LastModified - Set "Last-Modified" header based on
   sub my_runmode {
       my $self = shift;
       my %params = (
-          ...
+          # ...
           );
       return $self->tt_process( 'template.html', \%params );
   }
